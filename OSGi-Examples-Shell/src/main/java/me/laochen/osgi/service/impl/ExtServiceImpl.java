@@ -44,7 +44,9 @@ public class ExtServiceImpl implements IExtService {
 					if (this.proxyManager.isProxy(actualService)) {
 						actualService = this.proxyManager.unwrap(actualService).call();
 					}
-					result.add(actualService.getClass().getName());
+					if (actualService.getClass().getInterfaces().length>0){
+						result.add(actualService.getClass().getInterfaces()[0].getName());
+					}
 				}
 			}
 		} catch (InvalidSyntaxException e1) {
