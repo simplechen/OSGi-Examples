@@ -1,35 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>me.laochen.osgi</groupId>
-  <artifactId>OSGi-Examples</artifactId>
-  <version>0.0.1</version>
-  <packaging>pom</packaging>
-  <name>OSGi-Examples</name>
-  <url>http://www.laochen.me</url>
-  <properties>
-     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>me.laochen.osgi</groupId>
+	<artifactId>OSGi-Examples</artifactId>
+	<version>0.0.1</version>
+	<packaging>pom</packaging>
+	<name>OSGi-Examples</name>
+	<url>http://www.laochen.me</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<osgi.core.version>4.2.0</osgi.core.version>
+		<junit.version>4.10</junit.version>
+		<karaf.shell.console.version>2.2.11</karaf.shell.console.version>
+		<karaf.jdbc.core.version>3.0.2</karaf.jdbc.core.version>
+		<karaf.jndi.core.version>3.0.3</karaf.jndi.core.version>
+	</properties>
 
-  <build>
-    <pluginManagement>
-       <plugins>
-          <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-compiler-plugin</artifactId>
-              <configuration>
-                   <source>1.6</source>
-                   <target>1.6</target>
-                   <encoding>UTF-8</encoding>
-              </configuration>
-          </plugin>
-         </plugins>
-     </pluginManagement>
-  </build>
-  
-  <modules>
-    <module>OSGi-Examples-Camel</module>
-    <module>OSGi-Examples-Jdbc</module>
-    <module>OSGi-Examples-Shell</module>
-  </modules>
+	<modules>
+		<module>OSGi-Examples-Camel</module>
+		<module>OSGi-Examples-Jdbc</module>
+		<module>OSGi-Examples-Shell</module>
+	</modules>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>1.6</source>
+						<target>1.6</target>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.osgi</groupId>
+				<artifactId>org.osgi.core</artifactId>
+				<version>${osgi.core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.karaf.shell</groupId>
+				<artifactId>org.apache.karaf.shell.console</artifactId>
+				<version>${karaf.shell.console.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.karaf.jdbc</groupId>
+				<artifactId>org.apache.karaf.jdbc.core</artifactId>
+				<version>${karaf.jdbc.core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.karaf.jndi</groupId>
+				<artifactId>org.apache.karaf.jndi.core</artifactId>
+				<version>${karaf.jndi.core.version}</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
 </project>

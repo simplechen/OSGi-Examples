@@ -1,0 +1,24 @@
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:ext="http://aries.apache.org/blueprint/xmlns/blueprint-ext/v1.0.0"
+	default-activation="lazy">
+	<bean id="execCompleter" class="me.laochen.osgi.shell.completer.ExecSimpleCompleter" />
+	<bean id="ececShell" class="me.laochen.osgi.shell.ExecSimpleShell"></bean>
+
+	<command-bundle xmlns="http://karaf.apache.org/xmlns/shell/v1.0.0">
+		<command name="simple/exec">
+			<action class="me.laochen.osgi.shell.ExecSimpleShell" />
+			<completers>
+				<ref component-id="execCompleter" />
+				<null />
+			</completers>
+		</command>
+	</command-bundle>
+
+	<reference id="proxyManager" interface="org.apache.aries.proxy.ProxyManager" />
+	<bean id="extService" class="me.laochen.osgi.service.impl.ExtServiceImpl">
+		<property name="bundleContext" ref="blueprintBundleContext" />
+		<property name="proxyManager" ref="proxyManager" />
+	</bean>
+	<service ref="extService" interface="me.laochen.osgi.service.IExtService" />
+ 
+</blueprint>
