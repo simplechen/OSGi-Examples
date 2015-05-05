@@ -1,16 +1,19 @@
-## 通过Camel-Jetty包装,调用DbUtils实现的数据简单操作 ##
+## 通过Camel-Jetty包装,调用DbUtils实现的数据简单操作 
+
 实现通过camel包装http对数据库进行直接的访问
 
 本项目依赖于mysql,osgi,camel,dbutils,具体参看pom.xml中的maven包依赖信息
 
 数据源配置
-#karaf@root>jdbc:create -t MySQL -url jdbc:mysql://127.0.0.1/osgi -u root -p 123456 test
-参数手工调整 vi servicemix_install_dir/deploy/datasource-test.xml
+>1. 重新创建
+	karaf@root>jdbc:create -t MySQL -url jdbc:mysql://127.0.0.1/osgi -u root -p 123456 test
+>2. 参数手工调整 vi servicemix_install_dir/deploy/datasource-test.xml
 
 
 编译安装:
 1.mvn clean install
 2.将生成的jar:OSGi-Examples-DbUtils-0.0.1.jar复制至servicemix_install_dir/deploy目录下
+
 
 依赖处理
 1. 安装mysql对应java版本的驱动
