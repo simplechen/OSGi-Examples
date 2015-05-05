@@ -27,6 +27,7 @@
 		<module>OSGi-Examples-Camel</module>
 		<module>OSGi-Examples-Jdbc</module>
 		<module>OSGi-Examples-Shell</module>
+		<module>OSGi-Examples-DbUtils</module>
 	</modules>
 	<build>
 		<plugins>

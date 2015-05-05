@@ -11,3 +11,7 @@ start servicemix
 
 Blueprint Container
 https://www.ibm.com/developerworks/cn/opensource/os-osgiblueprint/
+
+
+安装spring
+features:install -v spring/3.2.4.RELEASE
