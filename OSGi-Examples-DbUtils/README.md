@@ -1,3 +1,4 @@
+## 通过Camel-Jetty包装,调用DbUtils实现的数据简单操作 ##
 实现通过camel包装http对数据库进行直接的访问
 
 本项目依赖于mysql,osgi,camel,dbutils,具体参看pom.xml中的maven包依赖信息
@@ -19,3 +20,5 @@
 
 访问地址:http://<ip>:<port>/dbutils[?id=xxx] 其中ip和port的配置在src/main/resources/OSGI-INF/blueprint/blueprint.xml中
 默认为本地机IP及8182端口，如果是在本机访问对应的地址是http://localhost:8182/dbutils
+
+DbUtils examples migrate from :http://www.codesuggestions.com/java/apache-commons-dbutils-tutorial/
