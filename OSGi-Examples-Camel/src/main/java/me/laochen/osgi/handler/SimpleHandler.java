@@ -20,7 +20,7 @@ public class SimpleHandler implements Processor {
 		Map<String,String[]> params = request.getParameterMap();
 		if(params.size()>0){
 			StringBuffer sbuffer = new StringBuffer();
-			for (String key : params.keySet()) {
+			for (String key : params.keySet()) {	
 				StringBuffer tsb = new StringBuffer();
 				for (String tval : params.get(key)) {
 					tsb.append(tval);

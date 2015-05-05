@@ -13,24 +13,21 @@
 			</completers>
 		</command>
 	</command-bundle>
-	
-	<!-- 
-		环境管理器
-		Blueprint Container 规范还定义了许多特殊的环境管理器，它们设置 ID 并提供对环境组件的访问。它们不具有 XML 定义，并且也不能被重写，因为它们的 ID 被保护起来，不能被其他管理器使用。环境管理器提供的对象只能被注入到使用引用的其他管理器中。Blueprint Container 规范定义了 4 种环境管理器：
-		blueprintBundle
-		提供包的 Bundle 对象。
-		blueprintBundleContext
-		提供包的 BundleContext 对象。
-		blueprintContainer
-		为包提供 BlueprintContainer 对象。
-		blueprintConverter
-		为包提供 Converter 对象，提供了对 Blueprint Container 类型转换工具的访问
-	 -->
+
+	<!-- 环境管理器 Blueprint Container 规范还定义了许多特殊的环境管理器，它们设置 ID 并提供对环境组件的访问。它们不具有 
+		XML 定义，并且也不能被重写，因为它们的 ID 被保护起来，不能被其他管理器使用。环境管理器提供的对象只能被注入到使用引用的其他管理器中。Blueprint 
+		Container 规范定义了 4 种环境管理器： blueprintBundle 提供包的 Bundle 对象。 blueprintBundleContext 
+		提供包的 BundleContext 对象。 blueprintContainer 为包提供 BlueprintContainer 对象。 blueprintConverter 
+		为包提供 Converter 对象，提供了对 Blueprint Container 类型转换工具的访问 -->
 	<reference id="proxyManager" interface="org.apache.aries.proxy.ProxyManager" />
 	<bean id="extService" class="me.laochen.osgi.service.impl.ExtServiceImpl">
 		<property name="bundleContext" ref="blueprintBundleContext" />
 		<property name="proxyManager" ref="proxyManager" />
 	</bean>
-	<service ref="extService" interface="me.laochen.osgi.service.IExtService" />
- 
+	<service ref="extService" interface="me.laochen.osgi.service.IExtService">
+		<service-properties>
+			<entry key="service.exported.interfaces" value="*" />
+		</service-properties>
+	</service>
+
 </blueprint>

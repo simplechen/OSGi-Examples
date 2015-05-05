@@ -18,6 +18,8 @@
 		<camel.core.version>2.15.1</camel.core.version>
 		<javax.inject.version>1</javax.inject.version>
 		<jetty.version>9.2.10.v20150310</jetty.version>
+		<dbutils.version>1.6</dbutils.version>
+		<mysql.version>5.1.35</mysql.version>
 
 		<!-- 将编译打完的包复制至servicemix安装目录下面 -->
 		<servicemxi.deploy.dir>/Users/simple/Documents/study/OSGI/servicemix/apache-servicemix-5.4.0/deploy</servicemxi.deploy.dir>
@@ -103,6 +105,16 @@
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-servlet</artifactId>
 				<version>${jetty.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-dbutils</groupId>
+				<artifactId>commons-dbutils</artifactId>
+				<version>${dbutils.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
