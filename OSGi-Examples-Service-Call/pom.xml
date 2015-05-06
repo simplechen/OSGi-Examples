@@ -11,6 +11,7 @@
 	<artifactId>OSGi-Examples-Service-Call</artifactId>
 	<name>OSGi-Examples-Service-Call</name>
 	<url>http://maven.apache.org</url>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -57,25 +58,7 @@
 								<copy
 									file="${project.build.directory}/${project.ArtifactId}-${project.version}.jar"
 									todir="${servicemxi.deploy.dir}" overwrite="true" />
-							</target>
-						</configuration>
-						<goals>
-							<goal>run</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
-			<!-- 将根据注解生成的XML复制到blueprint目录中 注意:如果服务注解发生变化，需要编译安装两次，第一次是为了得到生成的blueprint配置文件，第二次是为了将此配置文件复制至资源目录下面方便后面的打包 -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>copy-jar</id>
-						<phase>package</phase>
-						<configuration>
-							<target>
+								<!-- 将根据注解生成的XML复制到blueprint目录中 注意:如果服务注解发生变化，需要编译安装两次，第一次是为了得到生成的blueprint配置文件，第二次是为了将此配置文件复制至资源目录下面方便后面的打包 -->
 								<copy
 									file="${project.build.directory}/generated-resources/OSGI-INF/blueprint/autowire.xml"
 									todir="${basedir}/src/main/resources/OSGI-INF/blueprint/"

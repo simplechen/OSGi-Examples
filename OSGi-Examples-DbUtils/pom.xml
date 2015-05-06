@@ -46,7 +46,7 @@
 					</scanPaths>
 				</configuration>
 			</plugin>
-			<!-- <plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<executions>
@@ -65,7 +65,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin> -->
+			</plugin>
 
 			<!-- 将根据注解生成的XML复制到blueprint目录中 注意:如果服务注解发生变化，需要编译安装两次，第一次是为了得到生成的blueprint配置文件，第二次是为了将此配置文件复制至资源目录下面方便后面的打包 -->
 			<!-- <plugin>

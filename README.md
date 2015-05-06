@@ -24,3 +24,9 @@ for example: features:install -v spring/3.2.4.RELEASE
 #wget [http://central.maven.org/maven2/org/apache/aries/blueprint/blueprint-maven-plugin/1.1.0/blueprint-maven-plugin-1.1.0.jar]
 #mvn -X install:install-file  -Dfile=blueprint-maven-plugin-1.1.0.jar  -DgroupId=org.apache.aries.blueprint  -DartifactId=blueprint-maven-plugin -Dversion=1.1.0 -Dpackaging=jar
 ```
+
+
+### KW
+>1. Blueprint-maven-plugin [http://aries.apache.org/modules/blueprint-maven-plugin.html]
+
+>2. http://aries.apache.org/modules/blueprintnoosgi.html

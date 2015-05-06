@@ -23,4 +23,12 @@
 			<process ref="simpleHandler" />
 		</route>
 	</camelContext>
+
+	<bean id="simpleServlet" class="me.laochen.osgi.servlet.SimpleServlet"
+		ext:field-injection="true" />
+	<service interface="javax.servlet.http.HttpServlet" ref="simpleServlet">
+		<service-properties>
+			<entry key="alias" value="/home" />
+		</service-properties>
+	</service>
 </blueprint>

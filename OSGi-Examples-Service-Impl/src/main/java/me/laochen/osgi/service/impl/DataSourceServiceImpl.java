@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.inject.Singleton;
 import javax.sql.DataSource;
 
@@ -18,6 +19,7 @@ import org.osgi.framework.ServiceReference;
 @OsgiServiceProvider(classes={DataSourceService.class})
 @Properties({@Property(name="mode",value="me.laochen")})
 @Singleton
+@Named("dataSourceService")
 public class DataSourceServiceImpl implements DataSourceService {
 
 	@Inject
