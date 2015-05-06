@@ -13,10 +13,19 @@
 			<cm:property name="http.port" value="8182" />
 		</cm:default-properties>
 	</cm:property-placeholder>
-
-	<bean id="dbutilsHandler" class="me.laochen.osgi.handler.DbutilsHandler" ext:field-injection="true">
+	
+	<bean id="dataSourceServiceImpl" class="me.laochen.osgi.service.impl.DataSourceServiceImpl">
 		<property name="bundleContext" ref="blueprintBundleContext" />
 	</bean>
+	
+	<bean id="userServiceImpl" class="me.laochen.osgi.service.impl.UserServiceImpl">
+		<property name="dataSourceService" ref="dataSourceServiceImpl" />
+	</bean>
+	
+	<bean id="dbutilsHandler" class="me.laochen.osgi.handler.DbutilsHandler" ext:field-injection="true">
+		<property name="userService" ref="userServiceImpl"/>
+	</bean>
+	
 	<camelContext id="dbUtilsContext"
 		xmlns="http://camel.apache.org/schema/blueprint">
 		<route>

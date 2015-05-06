@@ -18,7 +18,7 @@
 >1. 安装mysql对应java版本的驱动
 从官网http://dev.mysql.com/downloads/connector/j/ 下载mysql驱动 5.1.35 并将此jar包移至servicemix_install_dir/deploy目录中
 >2.安装camel 参看OSGi-Examples-Camel中描述
-
+>3.安装pax-cdi
 
 访问地址:http://<ip>:<port>/dbutils[?id=xxx] 其中ip和port的配置在src/main/resources/OSGI-INF/blueprint/blueprint.xml中
 默认为本地机IP及8182端口，如果是在本机访问对应的地址是http://localhost:8182/dbutils

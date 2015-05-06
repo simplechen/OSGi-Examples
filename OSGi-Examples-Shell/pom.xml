@@ -9,9 +9,7 @@
 		<version>0.0.1</version>
 	</parent>
 
-	<groupId>me.laochen.osgi</groupId>
 	<artifactId>OSGi-Examples-Shell</artifactId>
-	<version>0.0.1</version>
 	<name>OSGi-Examples-Shell</name>
 	<url>http://maven.apache.org</url>
 
@@ -48,7 +46,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-antrun-plugin</artifactId>
-				<version>1.6</version>
 				<executions>
 					<execution>
 						<id>copy-jar</id>
