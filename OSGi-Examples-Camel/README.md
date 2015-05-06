@@ -26,6 +26,9 @@ visit: http://127.0.0.1:8182/hello
 	
 ## [扩展功能实现Pax Web(OSGi HttpService)]
 > 详细参看[http://servicemix.apache.org/docs/5.x/users-guide/http.html]
+> [https://ops4j1.jira.com/wiki/display/paxweb/Documentation]
+
+
 ### 包依赖 http,war
 >1. 安装
 ```
