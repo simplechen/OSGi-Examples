@@ -8,7 +8,6 @@
 	karaf@root>jdbc:create -t MySQL -url jdbc:mysql://127.0.0.1/osgi -u root -p 123456 test
 >2. 参数手工调整 vi servicemix_install_dir/deploy/datasource-test.xml
 
-
 >3. 编译安装:
 ```#mvn clean install```
 >4. 部署: 将生成的jar:OSGi-Examples-DbUtils-0.0.1.jar复制至servicemix_install_dir/deploy目录下
@@ -17,8 +16,14 @@
 ### 依赖处理
 >1. 安装mysql对应java版本的驱动
 从官网http://dev.mysql.com/downloads/connector/j/ 下载mysql驱动 5.1.35 并将此jar包移至servicemix_install_dir/deploy目录中
+
 >2.安装camel 参看OSGi-Examples-Camel中描述
+
 >3.安装pax-cdi
+```
+#karaf@root>features:install -v pax-cdi
+```
+
 
 访问地址:http://<ip>:<port>/dbutils[?id=xxx] 其中ip和port的配置在src/main/resources/OSGI-INF/blueprint/blueprint.xml中
 默认为本地机IP及8182端口，如果是在本机访问对应的地址是http://localhost:8182/dbutils
