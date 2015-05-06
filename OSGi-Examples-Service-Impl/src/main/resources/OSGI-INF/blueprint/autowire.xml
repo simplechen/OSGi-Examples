@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0" xmlns:ext="http://aries.apache.org/blueprint/xmlns/blueprint-ext/v1.0.0" xmlns:jpa="http://aries.apache.org/xmlns/jpa/v1.1.0" xmlns:tx="http://aries.apache.org/xmlns/transactions/v1.1.0">
+<bean id="dataSourceServiceImpl" class="me.laochen.osgi.service.impl.DataSourceServiceImpl" ext:field-injection="true">
+    <property name="bundleContext" ref="bundleContext"/>
+</bean>
+<bean id="userServiceImpl" class="me.laochen.osgi.service.impl.UserServiceImpl" ext:field-injection="true">
+    <property name="dataSourceService" ref="dataSourceServiceImpl"/>
+</bean>
+<service ref="dataSourceServiceImpl" interface="me.laochen.osgi.service.DataSourceService">
+    <service-properties>
+        <entry key="mode" value="me.laochen"/>
+    </service-properties>
+</service>
+<service ref="userServiceImpl" interface="me.laochen.osgi.service.UserService">
+    <service-properties>
+        <entry key="mode" value="me.laochen"/>
+    </service-properties>
+</service>
+</blueprint>
+

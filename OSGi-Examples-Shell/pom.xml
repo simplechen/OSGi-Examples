@@ -22,7 +22,7 @@
 					<archive>
 						<manifestEntries>
 							<Class-Path>${project.build.finalName}.jar</Class-Path>
-							<Built-By>Ponder</Built-By>
+							<Built-By>${author}</Built-By>
 							<Bundle-ManifestVersion>2</Bundle-ManifestVersion>
 							<Bundle-Name>${project.groupId}.${project.ArtifactId}</Bundle-Name>
 							<Bundle-SymbolicName>${project.name}</Bundle-SymbolicName>

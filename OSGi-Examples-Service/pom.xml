@@ -8,13 +8,12 @@
 		<artifactId>OSGi-Examples</artifactId>
 		<version>${version}</version>
 	</parent>
-	<artifactId>OSGi-Examples-Jdbc</artifactId>
-	<name>OSGi-Examples-Jdbc</name>
+	<artifactId>OSGi-Examples-Service</artifactId>
+	<name>OSGi-Examples-Service</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -31,18 +30,10 @@
 							<Bundle-Version>${project.version}</Bundle-Version>
 							<Bundle-Vendor>${project.groupId}</Bundle-Vendor>
 							<Embed-Dependency>*</Embed-Dependency>
+							<Export-Package>me.laochen.osgi.po,me.laochen.osgi.service</Export-Package>
 							<DynamicImport-Package>*</DynamicImport-Package>
 						</manifestEntries>
 					</archive>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.aries.blueprint</groupId>
-				<artifactId>blueprint-maven-plugin</artifactId>
-				<configuration>
-					<scanPaths>
-						<scanPath>me.laochen.osgi</scanPath>
-					</scanPaths>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -72,8 +63,6 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
 		</dependency>
 	</dependencies>
 </project>

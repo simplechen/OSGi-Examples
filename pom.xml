@@ -4,12 +4,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>me.laochen.osgi</groupId>
 	<artifactId>OSGi-Examples</artifactId>
-	<version>0.0.1</version>
+	<version>${version}</version>
 	<packaging>pom</packaging>
 	<name>OSGi-Examples</name>
 	<url>http://www.laochen.me</url>
 
 	<properties>
+		<version>0.0.3</version>
+		<author>laochen</author>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<osgi.core.version>4.2.0</osgi.core.version>
 		<junit.version>4.10</junit.version>
@@ -34,6 +36,9 @@
 		<module>OSGi-Examples-Jdbc</module>
 		<module>OSGi-Examples-Shell</module>
 		<module>OSGi-Examples-DbUtils</module>
+		<module>OSGi-Examples-Service</module>
+		<module>OSGi-Examples-Service-Impl</module>
+		<module>OSGi-Examples-Service-Call</module>
 	</modules>
 
 	<build>

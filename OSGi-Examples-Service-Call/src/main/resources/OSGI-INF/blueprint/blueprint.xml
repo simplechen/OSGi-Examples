@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ext="http://aries.apache.org/blueprint/xmlns/blueprint-ext/v1.0.0"
+	xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
+
+	<cm:property-placeholder persistent-id="me.laochen"
+		update-strategy="reload">
+		<!-- 默认值（如果karaf_install_dir/etc/me.laochen.cfg不存在或不配置项不存在时，使用默认值） -->
+		<cm:default-properties>
+			<cm:property name="http.host" value="0.0.0.0" />
+			<cm:property name="http.port" value="8182" />
+		</cm:default-properties>
+	</cm:property-placeholder>
+		
+	<camelContext id="servicesContext"
+		xmlns="http://camel.apache.org/schema/blueprint">
+		<route>
+			<from uri="jetty:http://{{http.host}}:{{http.port}}/services/user" />
+			<process ref="servicesHandler" />
+		</route>
+	</camelContext>
+</blueprint>

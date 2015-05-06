@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>me.laochen.osgi</groupId>
 		<artifactId>OSGi-Examples</artifactId>
-		<version>0.0.1</version>
+		<version>${version}</version>
 	</parent>
 
 	<artifactId>OSGi-Examples-Camel</artifactId>
@@ -26,7 +26,7 @@
 					<archive>
 						<manifestEntries>
 							<Class-Path>${project.build.finalName}.jar</Class-Path>
-							<Built-By>Ponder</Built-By>
+							<Built-By>${author}</Built-By>
 							<Bundle-ManifestVersion>2</Bundle-ManifestVersion>
 							<Bundle-Name>${project.groupId}.${project.ArtifactId}</Bundle-Name>
 							<Bundle-SymbolicName>${project.name}</Bundle-SymbolicName>
