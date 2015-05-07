@@ -3,7 +3,7 @@
 #### Features Dependency
 1. 安装jdbc
 ```
-#karaf>feature:install jdbc
+#karaf>features:install -v jdbc
 #karaf>la|grep -i jdbc
 #然后找到 Apache Karaf :: JDBC :: Core 对应的id
 #karaf>bundle:services id
