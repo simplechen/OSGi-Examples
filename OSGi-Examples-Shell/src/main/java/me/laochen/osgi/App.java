@@ -13,6 +13,8 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceEvent;
 import org.osgi.framework.ServiceListener;
+import org.osgi.framework.ServiceReference;
+import org.osgi.service.log.LogService;
 
 /**
  * Hello world!
@@ -23,6 +25,12 @@ public class App implements BundleActivator, ServiceListener {
 	@Override
 	public void start(BundleContext context) throws Exception {
 		System.err.println("Shell-start....");
+		
+		ServiceReference logServiceRef = context.getServiceReference(LogService.class.getName());
+		if(logServiceRef!=null){
+			LogService logger = (LogService) context.getService(logServiceRef);
+			logger.log(LogService.LOG_INFO, "在OSGi-Examples-Shell.Activator中使用LogService");
+		}
 		
 		System.err.println("start--获取指定目录下面的子目录或文件");
 		Enumeration<String> urls = context.getBundle().getEntryPaths("data");
